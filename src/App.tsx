@@ -17,10 +17,11 @@ function App() {
       shallow
     );
 
-  const { clicks, increaseClicks, resetClicks } = useMyStore(
+  const { clicks, increaseClicks, increaseClicks2, resetClicks } = useMyStore(
     (state: IMyStore) => ({
       clicks: state.clicks,
       increaseClicks: state.increaseClicks,
+      increaseClicks2: state.increaseClicks2,
       resetClicks: state.resetClicks,
     })
   );
@@ -44,6 +45,7 @@ function App() {
       <p>Clicks: {clicks}</p>
       <button onClick={increaseClicks}>Increase</button>
       <button onClick={resetClicks}>Reset</button>
+      <button onClick={increaseClicks2}>Increase2</button>
     </div>
   );
 }
