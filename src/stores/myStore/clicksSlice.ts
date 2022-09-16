@@ -12,7 +12,8 @@ const increase = (draft: IClicksSlice) => {
   draft.clicks = draft.clicks + 1;
 };
 
-const increase2 = produce((draft: IClicksSlice) => {
+// https://immerjs.github.io/immer/typescript
+const increase2 = produce<IClicksSlice>((draft) => {
   draft.clicks = draft.clicks + 1;
 });
 
