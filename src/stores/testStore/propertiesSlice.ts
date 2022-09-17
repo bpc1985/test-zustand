@@ -1,5 +1,4 @@
-import { StateCreator, StoreApi } from "zustand";
-// import produce from "immer";
+import { StateCreator } from "zustand";
 
 export interface IPropertiesSlice {
   readonly properties: number;
@@ -9,11 +8,12 @@ export interface IPropertiesSlice {
 
 const propertiesSlice: StateCreator<
   IPropertiesSlice,
-  [["zustand/devtools", never]]
+  [["zustand/devtools", never], ["zustand/immer", never]]
 > = (set, get) => ({
   properties: 0,
   increaseProperties: () => {
-    set((state) => ({ properties: state.properties + 1 }));
+    // set((state) => ({ properties: state.properties + 1 }));
+    set((state) => void (state.properties += 1));
   },
   resetProperties: () => {
     set({ properties: 0 });

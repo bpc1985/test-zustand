@@ -8,7 +8,7 @@ export interface IPlanetNamesSlice {
 
 const planetNamesSlice: StateCreator<
   IPlanetNamesSlice,
-  [["zustand/devtools", never]]
+  [["zustand/devtools", never], ["zustand/immer", never]]
 > = (set, get) => ({
   planetNames: [],
   getPlanetNames: async () => {
